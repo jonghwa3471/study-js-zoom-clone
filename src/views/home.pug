@@ -13,14 +13,14 @@ html(lang="en")
         form
           input(placeholder="Room name", required, type="text")
           button Enter Room
+        form#name
+          input(placeholder="Nickname", required, type="text")
+          button Save
         h4 Open Rooms:
         ul
       #room
         h3
         ul
-        form#name
-          input(placeholder="Nickname", required, type="text")
-          button Save
         form#msg
           input(placeholder="Message", required, type="text")
           button Send
