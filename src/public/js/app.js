@@ -179,12 +179,12 @@ function makeConnection() {
     .forEach((track) => myPeerConnection.addTrack(track, myStream));
 }
 
-function handleIce(data) {
+function handleIce(event) {
   console.log("sent candidate");
-  socket.emit("ice", data.candidate, roomName);
+  socket.emit("ice", event.candidate, roomName);
 }
 
-function handleTrack(data) {
+function handleTrack(event) {
   const peerFace = document.getElementById("peerFace");
-  peerFace.srcObject = data.stream;
+  peerFace.srcObject = event.streams[0];
 }
